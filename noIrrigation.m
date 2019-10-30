@@ -12,7 +12,7 @@ transferenciaCalor_RadiacionPosterior_2_NoIrrigation = sigma * areaPanel * emita
 
 transferenciaCalor_RadiacionPosterior_NoIrrigation = transferenciaCalor_RadiacionPosterior_1_NoIrrigation + transferenciaCalor_RadiacionPosterior_2_NoIrrigation;
 
-%% Conveccion - REVISAR
+%% Conveccion
 transferenciaCalor_ConveccionFrontal_NoIrrigation = areaPanel * coeficienteConveccionNoIrrigacion .* (temperaturaPanel - temperaturaAmbiente_i);
 transferenciaCalor_ConveccionPosterior_NoIrrigation = areaPanel * coeficienteConveccionNoIrrigacion .* (temperaturaPanel - temperaturaAmbiente_i);
 

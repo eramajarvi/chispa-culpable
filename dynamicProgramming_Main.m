@@ -35,3 +35,4 @@ velocidadViento = interp1(tiempo10min24h, VelocidadViento_Dia1, tiempo);
 
 %% Programación dinámica
 calcJmax;
+calcIrrigationProfile;
