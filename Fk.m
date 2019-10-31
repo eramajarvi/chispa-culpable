@@ -1,6 +1,6 @@
-function [fk] = Fk(temperaturaAmbiente, variacionTemperaturaPanel_NoIrrigation, vPotenciaIrrigacion, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel)
-    
-    fk = max(temperaturaAmbiente, (variacionTemperaturaPanel_NoIrrigation * (vPotenciaIrrigacion == 0) + variacionTemperaturaPanel_Irrigation * (vPotenciaIrrigacion == 15)) * deltaT + temperaturaPanel);
+function [Fk] = Fk(Tamb, Razon_var_noirri, vu, Razon_var_irri, deltaT, Tpanel)
+
+Fk = max(Tamb, (Razon_var_noirri * (vu==0) + Razon_var_irri * (vu==15)) * deltaT + Tpanel);
 
 end
 
