@@ -21,7 +21,7 @@ for k = N-1 : -1 : 1
         
        %% Llamado a funciones
         hk = h(potenciaGenerada_Irrigation, potenciaGenerada_NoIrrigation, potenciaGenerada, vPotenciaIrrigacion); % Funcion objetivo Potencia beneficio = potencia generada - potencia irrigación
-        xk = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigation, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel, vPotenciaIrrigacion);
+        xk = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigation, vPotenciaIrrigacion, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel);
         
         Jk1u = interp1(vTemperaturaPanel, Jmax(:, k + 1), xk);             % Costo óptimo del siguiente estado
         
