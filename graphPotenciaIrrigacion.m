@@ -1,4 +1,4 @@
-function graphPotenciaIrrigacion(X1, Y1, k)
+function graphPotenciaIrrigacion(X1, Y1, i)
 %CREATEFIGURE(X1, Y1)
 %  X1:  stairs x
 %  Y1:  stairs y
@@ -32,7 +32,7 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 
 %% Guardar figura
 
-numeroDia = k;
+numeroDia = i;
 
 nombreArchivo = ['graphPotenciaIrrigacion_Dia', num2str(i)];
 

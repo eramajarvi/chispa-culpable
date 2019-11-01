@@ -1,4 +1,4 @@
-function graphTemperaturaAmbiente(X1, Y1, k)
+function graphTemperaturaAmbiente(X1, Y1, i)
 %CREATEFIGURE(X1, Y1)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -32,7 +32,7 @@ set(axes1,'FontName','Cambria Math','GridLineStyle','--','XMinorGrid','on',...
 
 %% Guardar figura
 
-numeroDia = k;
+numeroDia = i;
 
 nombreArchivo = ['graphTemperaturaAmbiente_Dia', num2str(i)];
 

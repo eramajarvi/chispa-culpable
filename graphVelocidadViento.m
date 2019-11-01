@@ -1,4 +1,4 @@
-function graphVelocidadViento(X1, Y1, k)
+function graphVelocidadViento(X1, Y1, i)
 %CREATEFIGURE(X1, Y1)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -32,7 +32,7 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 
 %% Guardar figura
 
-numeroDia = k;
+numeroDia = i;
 
 nombreArchivo = ['graphVelocidadViento_Dia', num2str(i)];
 

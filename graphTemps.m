@@ -1,4 +1,4 @@
-function graphTemps(X1, YMatrix1, k)
+function graphTemps(X1, YMatrix1, i)
 %CREATEFIGURE(X1, YMatrix1)
 %  X1:  vector of x data
 %  YMATRIX1:  matrix of y data
@@ -37,7 +37,7 @@ legend(axes1,'show');
 
 %% Guardar figura
 
-numeroDia = k;
+numeroDia = i;
 
 nombreArchivo = ['graphTemperaturas_Dia', num2str(i)];
 

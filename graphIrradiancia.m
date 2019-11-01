@@ -35,7 +35,7 @@ figure1;
 
 numeroDia = i;
 
-nombreArchivo = ['graphIrrigacion_Dia', num2str(i)];
+nombreArchivo = ['graphIrradiancia_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');
