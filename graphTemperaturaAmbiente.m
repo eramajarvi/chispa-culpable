@@ -1,4 +1,4 @@
-function graphTemperaturaAmbiente(X1, Y1)
+function graphTemperaturaAmbiente(X1, Y1, k)
 %CREATEFIGURE(X1, Y1)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -29,3 +29,13 @@ grid(axes1,'on');
 % Set the remaining axes properties
 set(axes1,'FontName','Cambria Math','GridLineStyle','--','XMinorGrid','on',...
     'YMinorGrid','on');
+
+%% Guardar figura
+
+numeroDia = k;
+
+nombreArchivo = ['graphTemperaturaAmbiente_Dia', num2str(i)];
+
+saveas(figure1, nombreArchivo, 'fig');
+saveas(figure1, nombreArchivo, 'png');
+close;

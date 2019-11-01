@@ -1,4 +1,4 @@
-function graphTemps(X1, YMatrix1)
+function graphTemps(X1, YMatrix1, k)
 %CREATEFIGURE(X1, YMatrix1)
 %  X1:  vector of x data
 %  YMATRIX1:  matrix of y data
@@ -34,4 +34,14 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'XMinorGrid','on',...
     'YMinorGrid','on');
 % Create legend
 legend(axes1,'show');
+
+%% Guardar figura
+
+numeroDia = k;
+
+nombreArchivo = ['graphTemperaturas_Dia', num2str(i)];
+
+saveas(figure1, nombreArchivo, 'fig');
+saveas(figure1, nombreArchivo, 'png');
+close;
 

@@ -1,4 +1,4 @@
-function graphPotenciaIrrigacion(X1, Y1)
+function graphPotenciaIrrigacion(X1, Y1, k)
 %CREATEFIGURE(X1, Y1)
 %  X1:  stairs x
 %  Y1:  stairs y
@@ -29,3 +29,13 @@ grid(axes1,'on');
 % Set the remaining axes properties
 set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
     '--','XMinorGrid','on','YMinorGrid','on');
+
+%% Guardar figura
+
+numeroDia = k;
+
+nombreArchivo = ['graphPotenciaIrrigacion_Dia', num2str(i)];
+
+saveas(figure1, nombreArchivo, 'fig');
+saveas(figure1, nombreArchivo, 'png');
+close;
