@@ -8,24 +8,24 @@ function [irradiancia, temperaturaAmbiente, velocidadViento,...
 %%
 parameters;                                                                % Cargar parametros
 deltaT = 60;                                                               % Delta de tiempo
-N = 1441;                                                                  % Numero de pasos 24*60 + 1
+N = 721;                                                                   % Numero de pasos 12*60 + 1 (minutos)
 
 %% Tiempos
 
 % Los perfiles meteorológicos tienen una resolución de 10 minutos durante
 % un día, sin contar el primer y último paso de cada día
 
-tiempo10min24h = 0:600:85200;                                              % Vector de tiempo para un perfil de un día, con 143 pasos
-tiempo = linspace(0, tiempo10min24h(end), N);                              % Vector de cantidad N entre 0 y longitud del vector del perfil de un día espaciados uniformemente
+tiempo10min12h = 0:600:43200;                                              % Vector de tiempo para un perfil de un día, con 73 pasos (segundos)
+tiempo = linspace(0, tiempo10min12h(end), N);                              % Vector de cantidad N entre 0 y longitud del vector del perfil de un día espaciados uniformemente
 
 %% Días
 % Interpolacion de los datos importados
 % Las variables al ser interpoladas tienen N datos
 
 
-temperaturaAmbiente = interp1(tiempo10min24h, TemperaturaAmbiente_DiaActual, tiempo); % Temperatura ambiente
-irradiancia = interp1(tiempo10min24h, Irradiancia_DiaActual, tiempo); % Irradiancia
-velocidadViento = interp1(tiempo10min24h, VelocidadViento_DiaActual, tiempo); % Veloicdad del viento
+temperaturaAmbiente = interp1(tiempo10min12h, TemperaturaAmbiente_DiaActual, tiempo); % Temperatura ambiente
+irradiancia = interp1(tiempo10min12h, Irradiancia_DiaActual, tiempo); % Irradiancia
+velocidadViento = interp1(tiempo10min12h, VelocidadViento_DiaActual, tiempo); % Veloicdad del viento
 
 disp(strjoin({'Calculando perfil óptimo para el día ', num2str(d), '...'}));
 

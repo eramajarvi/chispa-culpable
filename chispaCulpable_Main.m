@@ -13,9 +13,9 @@ load ('C:\Users\james\Documents\ShallowBayDEV\tangente-penitente\MatricesDelArca
 for i = 1 : 1 : size(Irradiancia_Matriz, 1)
     
     %% Invocar la programación dinámica
-    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, :);
-    Irradiancia_DiaActual = Irradiancia_Matriz(i, :);
-    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, :);
+    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, [36:108]);
+    Irradiancia_DiaActual = Irradiancia_Matriz(i, [36:108]);
+    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, [36:108]);
 
     [irradiancia, temperaturaAmbiente, velocidadViento,...
         control, temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, ...
