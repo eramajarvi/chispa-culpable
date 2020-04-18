@@ -35,7 +35,9 @@ figure1;
 
 numeroDia = i;
 
-nombreArchivo = ['graphIrradiancia_Dia', num2str(i)];
+ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+
+nombreArchivo = [ruta, 'graphIrradiancia_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');

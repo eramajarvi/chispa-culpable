@@ -39,7 +39,9 @@ legend(axes1,'show');
 
 numeroDia = i;
 
-nombreArchivo = ['graphTemperaturas_Dia', num2str(i)];
+ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+
+nombreArchivo = [ruta, 'graphTemperaturas_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');

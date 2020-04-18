@@ -31,10 +31,11 @@ set(axes1,'FontName','Cambria Math','GridLineStyle','--','XMinorGrid','on',...
     'YMinorGrid','on');
 
 %% Guardar figura
+ruta = '/MATLAB Drive/tangente-penitente/graficas/';
 
 numeroDia = i;
 
-nombreArchivo = ['graphTemperaturaAmbiente_Dia', num2str(i)];
+nombreArchivo = [ruta, 'graphTemperaturaAmbiente_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');

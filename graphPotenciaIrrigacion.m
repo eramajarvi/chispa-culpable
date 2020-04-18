@@ -34,7 +34,9 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 
 numeroDia = i;
 
-nombreArchivo = ['graphPotenciaIrrigacion_Dia', num2str(i)];
+ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+
+nombreArchivo = [ruta, 'graphPotenciaIrrigacion_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');

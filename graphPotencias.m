@@ -38,7 +38,8 @@ legend(axes1,'show');
 
 numeroDia = i;
 
-nombreArchivo = ['graphPotencias_Dia', num2str(i)];
+ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+nombreArchivo = [ruta, 'graphPotencias_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
 saveas(figure1, nombreArchivo, 'png');
