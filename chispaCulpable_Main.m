@@ -11,8 +11,8 @@ rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
 
-posicion6AM = 37;
-posicion6PM = 109;
+posicion6AM = 36;
+posicion6PM = 108;
 
 %%
 
