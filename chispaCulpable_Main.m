@@ -10,7 +10,7 @@ clc; clear all; close all;
 rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
 
 % rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
-rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles';
+rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles\';
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
 
