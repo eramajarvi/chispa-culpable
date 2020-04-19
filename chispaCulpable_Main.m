@@ -1,7 +1,7 @@
 %% FUNCIÓN PRINCIPAL PROGRAMACIÓN DINÁMICA
 % Modificada para llamar a una función de forma iterativa y guardar los
 % perfiles generados
-
+tic
 clc; clear all; close all;
 
 %% Cargar datos
@@ -53,3 +53,4 @@ for i = 1 : 1 : size(Irradiancia_Matriz, 1)
         Pben Pgen_NoIrrigation energiaBeneficio energiaNoBeneficio razon_Irrigacion ...
         razon_NoIrrigation tiempo;
 end
+toc
