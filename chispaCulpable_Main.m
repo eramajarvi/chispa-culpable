@@ -6,8 +6,11 @@ clc; clear all; close all;
 
 %% Cargar datos
 % Importa la matriz con los datos de todos los días
-rutaCarga = '/MATLAB Drive/tangente-penitente';
-rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
+% rutaCarga = '/MATLAB Drive/tangente-penitente';
+rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
+
+% rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
+rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles';
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
 
@@ -15,7 +18,7 @@ posicion6AM = 36;
 posicion6PM = 108;
 
 %%
-
+fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz,1));
 for i = 1 : 1 : size(Irradiancia_Matriz, 1)
     
     %% Invocar la programación dinámica

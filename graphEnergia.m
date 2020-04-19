@@ -40,7 +40,9 @@ legend(axes1,'show');
 
 numeroDia = i;
 
-ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+% ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas';
+
 nombreArchivo = [ruta, 'graphEnergia_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');

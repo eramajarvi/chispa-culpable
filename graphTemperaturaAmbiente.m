@@ -31,7 +31,8 @@ set(axes1,'FontName','Cambria Math','GridLineStyle','--','XMinorGrid','on',...
     'YMinorGrid','on');
 
 %% Guardar figura
-ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+% ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas';
 
 numeroDia = i;
 

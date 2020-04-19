@@ -34,7 +34,9 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 
 numeroDia = i;
 
-ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+%ruta = '/MATLAB Drive/tangente-penitente/graficas/';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas';
+
 nombreArchivo = [ruta, 'graphVelocidadViento_Dia', num2str(i)];
 
 saveas(figure1, nombreArchivo, 'fig');
