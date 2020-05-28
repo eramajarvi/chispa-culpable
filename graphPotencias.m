@@ -16,6 +16,7 @@ hold(axes1,'on');
 plot1 = plot(X1,YMatrix1,'LineWidth',1);
 set(plot1(1),'DisplayName','Potencia beneficio');
 set(plot1(2),'DisplayName','Potencia sin irrigación');
+set(plot1(3), 'DisplayName', 'Potencia beneficio SBR');
 
 % Create ylabel
 ylabel('Potencia [W]');
@@ -39,7 +40,7 @@ legend(axes1,'show');
 numeroDia = i;
 
 % ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Potencias\';
 
 nombreArchivo = [ruta, 'graphPotencias_Dia', num2str(i)];
 

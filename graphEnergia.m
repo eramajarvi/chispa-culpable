@@ -18,6 +18,8 @@ set(plot1(1),'DisplayName','Energía beneficio',...
     'Color',[0.015686274509804 0.72156862745098 0.086274509803922]);
 set(plot1(2),'DisplayName','Energía sin irrigación',...
     'Color',[0.96078431372549 0.094117647058824 0]);
+set(plot1(3),'DisplayName','Energía beneficio SBR',...
+    'Color',[0.015686274509804 0.094117647058824 0.086274509803922]);
 
 % Create ylabel
 ylabel('Energía [kWh]');
@@ -41,7 +43,7 @@ legend(axes1,'show');
 numeroDia = i;
 
 % ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Energia\';
 
 nombreArchivo = [ruta, 'graphEnergia_Dia', num2str(i)];
 

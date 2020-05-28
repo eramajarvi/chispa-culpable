@@ -1,11 +1,12 @@
-%% FUNCIÓN PRINCIPAL PROGRAMACIÓN DINÁMICA
-% Modificada para llamar a una función de forma iterativa y guardar los
+%% FUNCIï¿½N PRINCIPAL PROGRAMACIï¿½N DINï¿½MICA
+% Modificada para llamar a una funciï¿½n de forma iterativa y guardar los
 % perfiles generados
 tic
 clc; clear all; close all;
 
 %% Cargar datos
-% Importa la matriz con los datos de todos los días
+% Importa la matriz con los datos de todos los dias, llamada
+% matricesDelArca.mat
 % rutaCarga = '/MATLAB Drive/tangente-penitente';
 rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
 
@@ -17,11 +18,18 @@ load ([rutaCarga, 'MatricesDelArca.mat']);
 posicion6AM = 36;
 posicion6PM = 108;
 
+% Carga de las predicciones de irrigacion dadas por Tangente Penitente
+load([rutaCarga, 'control.mat']);
+
 %%
 fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz,1));
-for i = 1 : 1 : size(Irradiancia_Matriz, 1)
+for i = 7 : 1 : 8
+    % Perfiles de irrigacion predichos
+    j = 1;
+    IrrigacionDiaActual = controlIrrigacion(:, j).';
+    IrrigacionDiaActual(IrrigacionDiaActual == 1 ) = 15;
     
-    %% Invocar la programación dinámica
+    %% Invocar la programaciï¿½n dinamica
     TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, [posicion6AM:posicion6PM]);
     Irradiancia_DiaActual = Irradiancia_Matriz(i, [posicion6AM:posicion6PM]);
     VelocidadViento_DiaActual = VelocidadViento_Matriz(i, [posicion6AM:posicion6PM]);
@@ -29,13 +37,14 @@ for i = 1 : 1 : size(Irradiancia_Matriz, 1)
     [irradiancia, temperaturaAmbiente, velocidadViento,...
         control, temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, ...
         Pgen_NoIrrigation, energiaBeneficio, energiaNoBeneficio, razon_Irrigacion, ...
-        razon_NoIrrigation, tiempo] = dynamicProgamming_MainFunction(...
-        TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, i);
+        razon_NoIrrigation, tiempo, ...
+        controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR] = dynamicProgamming_MainFunction(...
+        TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, i, IrrigacionDiaActual);
 
     %% Graficar datos
     graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, control, ...
         temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, Pgen_NoIrrigation, ...
-        energiaBeneficio, energiaNoBeneficio, i, tiempo);
+        energiaBeneficio, energiaNoBeneficio, i, tiempo, controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR);
 
     numeroDia = i;
     
@@ -52,5 +61,7 @@ for i = 1 : 1 : size(Irradiancia_Matriz, 1)
         ejeTiempo ejeTiempo_b temperaturaPanel temperaturaPanel_NoIrrigation ...
         Pben Pgen_NoIrrigation energiaBeneficio energiaNoBeneficio razon_Irrigacion ...
         razon_NoIrrigation tiempo;
+    
+    j = j + 1;
 end
 toc

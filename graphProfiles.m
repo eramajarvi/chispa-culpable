@@ -1,6 +1,6 @@
-function [] = graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, control, temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, Pgen_NoIrrigation, energiaBeneficio, energiaNoBeneficio, i, tiempo)
+function [] = graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, control, temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, Pgen_NoIrrigation, energiaBeneficio, energiaNoBeneficio, i, tiempo, controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR)
 %% Datos meteorologicos del día
-
+% controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR
 tiempo10min12h = 0:600:43200;
 N = 721;  
 
@@ -19,18 +19,19 @@ graphTemperaturaAmbiente(ejeTiempo, temperaturaAmbiente, i)
 % Velocidad del viento
 graphVelocidadViento(ejeTiempo, velocidadViento, i)
 
-%% Grafica de resultados de interes
-% Potencia de irrigacion
+%% Grafica de resultados de interes 
+% Potencia de irrigacion - Programacion dinamica
 graphPotenciaIrrigacion(ejeTiempo_b, control, i)
+graphPotenciaIrrigacionSBR(ejeTiempo_b, controlSBR, i)
 
-% Temperatura del panel FV
-graphTemps(ejeTiempo, [temperaturaAmbiente; temperaturaPanel; temperaturaPanel_NoIrrigation], i);
+% Temperatura del panel FV (incluye SBR)
+graphTemps(ejeTiempo, [temperaturaAmbiente; temperaturaPanel; temperaturaPanel_NoIrrigation; temperaturaPanelSBR], i);
 
-% Potencia generada
-graphPotencias(ejeTiempo_b, [Pben; Pgen_NoIrrigation], i);
+% Potencia generada (incluye SBR)
+graphPotencias(ejeTiempo_b, [Pben; Pgen_NoIrrigation; PbenSBR], i);
 
-% Energía
-graphEnergia(ejeTiempo_b, [energiaBeneficio; energiaNoBeneficio], i);
+% Energía (incluye SBR)
+graphEnergia(ejeTiempo_b, [energiaBeneficio; energiaNoBeneficio; energiaBeneficioSBR], i);
 
 disp(strjoin({'Gráficas del día ', num2str(i), 'generadas y guardadas'}));
 fprintf('\n \n');

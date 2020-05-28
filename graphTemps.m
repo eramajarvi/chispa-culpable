@@ -17,6 +17,7 @@ plot1 = plot(X1,YMatrix1,'LineWidth',1,'Parent',axes1);
 set(plot1(1),'DisplayName','Temperatura ambiente');
 set(plot1(2),'DisplayName','Temperatura con irrigación');
 set(plot1(3),'DisplayName','Temperatura sin irrigación');
+set(plot1(4), 'DisplayName', 'Temperatura SBR');
 
 % Create ylabel
 ylabel('Temperatura [°C]');
@@ -40,7 +41,7 @@ legend(axes1,'show');
 numeroDia = i;
 
 % ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\';
+ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Temperaturas\';
 
 nombreArchivo = [ruta, 'graphTemperaturas_Dia', num2str(i)];
 
