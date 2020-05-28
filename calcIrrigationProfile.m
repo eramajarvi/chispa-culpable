@@ -1,7 +1,7 @@
-%% Sistema de irrigación activo
-temperaturaPanel(1) = 23;                                                  % Temperatura inicial del panel FV con sistema de irrigación activo
+%% Sistema de irrigaciï¿½n activo
+temperaturaPanel(1) = 23;                                                  % Temperatura inicial del panel FV con sistema de irrigaciï¿½n activo
 
-% Cálculo de temperatura
+% Cï¿½lculo de temperatura
 for k = 1 : 1 : N - 1
     iterativeData;
     
@@ -26,7 +26,7 @@ for k = 1 : 1 : N - 1
         * coeficienteConveccionNoIrrigacion .* (temperaturaPanel(k)...
         - temperaturaAmbiente_i)))/(areaPanel *capacidadTermica_k);
     
-    uopt = interp1(vTemperaturaPanel, Uopt(:, k), temperaturaPanel(k));   
+    uopt = interp1(vTemperaturaPanel, Uopt(:, k), temperaturaPanel(k));
     temperaturaPanel(k + 1) = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigation, uopt, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel(k));
     control(k) = uopt;
     Pgen(k) = potenciaGenerada;
@@ -36,10 +36,10 @@ end
 
 control = (control > 0) * 15;
 
-%% Sistema de irrigación inactivo
-temperaturaPanel_NoIrrigation(1) = 23;                                     % Temperatura inicial del panel FV con sistema de irrigación inactivo
+%% Sistema de irrigaciï¿½n inactivo
+temperaturaPanel_NoIrrigation(1) = 23;                                     % Temperatura inicial del panel FV con sistema de irrigaciï¿½n inactivo
 
-% Cálculo de temperatura
+% Cï¿½lculo de temperatura
 for k = 1: 1: N - 1
     
     iterativeData;
@@ -64,6 +64,7 @@ for k = 1: 1: N - 1
     
 end
 
+%% Energia
 energiaBeneficio(1) = 0;
 
 for k = 2:1:N-1

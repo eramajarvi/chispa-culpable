@@ -3,7 +3,7 @@ function [irradiancia, temperaturaAmbiente, velocidadViento,...
     Pgen_NoIrrigation, energiaBeneficio, energiaNoBeneficio, razon_Irrigacion, ...
     razon_NoIrrigation, tiempo] = dynamicProgamming_MainFunction(TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, d)
 
-%PROGRAMACIÓN DINÁMICA Crea los perfiles óptimos de irrigación de un panel
+%PROGRAMACIï¿½N DINï¿½MICA Crea los perfiles ï¿½ptimos de irrigaciï¿½n de un panel
 %FV a partir de los datos de entrada
 
 %%
@@ -13,13 +13,13 @@ N = 721;                                                                   % Num
 
 %% Tiempos
 
-% Los perfiles meteorológicos tienen una resolución de 10 minutos durante
-% un día, sin contar el primer y último paso de cada día
+% Los perfiles meteorolï¿½gicos tienen una resoluciï¿½n de 10 minutos durante
+% un dï¿½a, sin contar el primer y ï¿½ltimo paso de cada dï¿½a
 
-tiempo10min12h = 0:600:43200;                                              % Vector de tiempo para un perfil de un día, con 73 pasos (43200 segundos en 12 horas)
-tiempo = linspace(0, tiempo10min12h(end), N);                              % Vector de cantidad N entre 0 y longitud del vector del perfil de un día espaciados uniformemente
+tiempo10min12h = 0:600:43200;                                              % Vector de tiempo para un perfil de un dï¿½a, con 73 pasos (43200 segundos en 12 horas)
+tiempo = linspace(0, tiempo10min12h(end), N);                              % Vector de cantidad N entre 0 y longitud del vector del perfil de un dï¿½a espaciados uniformemente
 
-%% Días
+%% Dï¿½as
 % Interpolacion de los datos importados
 % Las variables al ser interpoladas tienen N datos
 
@@ -27,9 +27,9 @@ temperaturaAmbiente = interp1(tiempo10min12h, TemperaturaAmbiente_DiaActual, tie
 irradiancia = interp1(tiempo10min12h, Irradiancia_DiaActual, tiempo); % Irradiancia
 velocidadViento = interp1(tiempo10min12h, VelocidadViento_DiaActual, tiempo); % Veloicdad del viento
 
-disp(strjoin({'Calculando perfil óptimo para el día ', num2str(d), '...'}));
+disp(strjoin({'Calculando perfil ï¿½ptimo para el dï¿½a ', num2str(d), '...'}));
 
-%% Programación dinámica
+%% Programaciï¿½n dinï¿½mica
 calcJmax;
 calcIrrigationProfile;
 
@@ -38,17 +38,22 @@ calcIrrigationProfile;
 irradiancia;
 temperaturaAmbiente;
 velocidadViento;
+
 control;
+
 temperaturaPanel;
 temperaturaPanel_NoIrrigation;
+
 Pben;
 Pgen_NoIrrigation;
+
 energiaBeneficio;
 energiaNoBeneficio;
+
 razon_Irrigacion;
 razon_NoIrrigation;
 
-disp(strjoin({'Perfil del día ', num2str(d), 'calculado'}));
+disp(strjoin({'Perfil del dï¿½a ', num2str(d), 'calculado'}));
 fprintf('\n');
 
 end
