@@ -1,11 +1,11 @@
-%% FUNCIÓN PRINCIPAL PROGRAMACIÓN DINÁMICA
-% Modificada para llamar a una función de forma iterativa y guardar los
+%% FUNCIï¿½N PRINCIPAL PROGRAMACIï¿½N DINï¿½MICA
+% Modificada para llamar a una funciï¿½n de forma iterativa y guardar los
 % perfiles generados
 tic
 clc; clear all; close all;
 
 %% Cargar datos
-% Importa la matriz con los datos de todos los días
+% Importa la matriz con los datos de todos los dï¿½as
 % rutaCarga = '/MATLAB Drive/tangente-penitente';
 rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
 
@@ -21,7 +21,7 @@ posicion6PM = 108;
 fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz,1));
 for i = 1 : 1 : size(Irradiancia_Matriz, 1)
     
-    %% Invocar la programación dinámica
+    %% Invocar la programacion dinamica
     TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, [posicion6AM:posicion6PM]);
     Irradiancia_DiaActual = Irradiancia_Matriz(i, [posicion6AM:posicion6PM]);
     VelocidadViento_DiaActual = VelocidadViento_Matriz(i, [posicion6AM:posicion6PM]);

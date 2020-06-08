@@ -2,7 +2,7 @@ function [] = graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, c
 %% Datos meteorologicos del día
 
 tiempo10min12h = 0:600:43200;
-N = 721;  
+N = 73;  
 
 ejeTiempo = tiempo/60/60 + 6;
 ejeTiempo_b = (linspace(0, tiempo10min12h(end), N-1))/60/60 + 6;
