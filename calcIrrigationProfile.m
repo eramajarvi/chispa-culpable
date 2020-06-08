@@ -26,12 +26,13 @@ for k = 1 : 1 : N - 1
         * coeficienteConveccionNoIrrigacion .* (temperaturaPanel(k)...
         - temperaturaAmbiente_i)))/(areaPanel *capacidadTermica_k);
     
-    uopt = interp1(vTemperaturaPanel, Uopt(:, k), temperaturaPanel(k));
-    temperaturaPanel(k + 1) = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigation, uopt, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel(k));
-    control(k) = uopt;
-    Pgen(k) = potenciaGenerada;
-    Pben(k) = potenciaGenerada - uopt;
-    razon_Irrigacion(k + 1) = var(variacionTemperaturaPanel_NoIrrigation, uopt, variacionTemperaturaPanel_Irrigation, deltaT);
+    irriga = IrrigacionSBR(k);
+    
+    temperaturaPanelSBR(k + 1) = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigationSBR, irriga, variacionTemperaturaPanel_IrrigationSBR, deltaT, temperaturaPanelSBR(k));
+    controlSBR(k) = irriga;
+    PgenSBR(k) = potenciaGeneradaSBR;
+    PbenSBR(k) = potenciaGeneradaSBR - IrrigacionSBR(k);
+    razon_IrrigacionSBR(k + 1) = var(variacionTemperaturaPanel_NoIrrigationSBR, irriga, variacionTemperaturaPanel_IrrigationSBR, deltaT);
 end
 
 control = (control > 0) * 15;

@@ -19,7 +19,11 @@ posicion6PM = 108;
 
 %%
 fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz,1));
-for i = 1 : 1 : size(Irradiancia_Matriz, 1)
+for i = 413 : 1 : 413
+    % Perfiles de irrigacion predichos
+    j = 1;
+    IrrigacionDiaActual = controlIrrigacion(:, j).';
+    IrrigacionDiaActual(IrrigacionDiaActual == 1 ) = 15;
     
     %% Invocar la programacion dinamica
     TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, [posicion6AM:posicion6PM]);
