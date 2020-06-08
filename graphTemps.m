@@ -15,9 +15,8 @@ hold(axes1,'on');
 % Create multiple lines using matrix input to plot
 plot1 = plot(X1,YMatrix1,'LineWidth',1,'Parent',axes1);
 set(plot1(1),'DisplayName','Temperatura ambiente');
-set(plot1(2),'DisplayName','Temperatura con irrigación');
+set(plot1(2),'DisplayName','Temperatura con irrigación SBR');
 set(plot1(3),'DisplayName','Temperatura sin irrigación');
-set(plot1(4), 'DisplayName', 'Temperatura SBR');
 
 % Create ylabel
 ylabel('Temperatura [°C]');

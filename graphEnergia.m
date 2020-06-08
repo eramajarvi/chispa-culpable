@@ -14,12 +14,11 @@ hold(axes1,'on');
 
 % Create multiple lines using matrix input to plot
 plot1 = plot(X1,YMatrix1,'LineWidth',1);
-set(plot1(1),'DisplayName','Energía beneficio',...
+set(plot1(1),'DisplayName','Energía beneficio SBR',...
     'Color',[0.015686274509804 0.72156862745098 0.086274509803922]);
 set(plot1(2),'DisplayName','Energía sin irrigación',...
     'Color',[0.96078431372549 0.094117647058824 0]);
-set(plot1(3),'DisplayName','Energía beneficio SBR',...
-    'Color',[0.015686274509804 0.094117647058824 0.086274509803922]);
+
 
 % Create ylabel
 ylabel('Energía [kWh]');

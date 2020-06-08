@@ -14,9 +14,8 @@ hold(axes1,'on');
 
 % Create multiple lines using matrix input to plot
 plot1 = plot(X1,YMatrix1,'LineWidth',1);
-set(plot1(1),'DisplayName','Potencia beneficio');
+set(plot1(1),'DisplayName','Potencia beneficio SBR');
 set(plot1(2),'DisplayName','Potencia sin irrigación');
-set(plot1(3), 'DisplayName', 'Potencia beneficio SBR');
 
 % Create ylabel
 ylabel('Potencia [W]');
