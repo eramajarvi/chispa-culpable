@@ -23,9 +23,9 @@ tiempo = linspace(0, tiempo10min12h(end), N); % Vector de cantidad N entre 0 y l
 % Interpolacion de los datos importados
 % Las variables al ser interpoladas tienen N datos
 
-temperaturaAmbiente = interp1(tiempo10min12h, TemperaturaAmbiente_DiaActual, tiempo); % Temperatura ambiente
-irradiancia = interp1(tiempo10min12h, Irradiancia_DiaActual, tiempo); % Irradiancia
-velocidadViento = interp1(tiempo10min12h, VelocidadViento_DiaActual, tiempo); % Veloicdad del viento
+temperaturaAmbiente = TemperaturaAmbiente_DiaActual; % Temperatura ambiente
+irradiancia = Irradiancia_DiaActual; % Irradiancia
+velocidadViento = VelocidadViento_DiaActual; % Veloicdad del viento
 
 disp(strjoin({'Calculando perfil optimo para el dia ', num2str(d), '...'}));
 
@@ -34,24 +34,6 @@ calcJmax;
 calcIrrigationProfile;
 
 %% Devolver datos procesados
-
-irradiancia;
-temperaturaAmbiente;
-velocidadViento;
-
-control;
-
-temperaturaPanel;
-temperaturaPanel_NoIrrigation;
-
-Pben;
-Pgen_NoIrrigation;
-
-energiaBeneficio;
-energiaNoBeneficio;
-
-razon_Irrigacion;
-razon_NoIrrigation;
 
 disp(strjoin({'Perfil del dia ', num2str(d), 'calculado'}));
 fprintf('\n');
