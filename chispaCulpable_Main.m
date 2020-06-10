@@ -8,27 +8,28 @@ clc; clear all; close all;
 % Importa la matriz con los datos de todos los dias, llamada
 % matricesDelArca.mat
 
-rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
-
+rutaCargaArca = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
 rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles\';
-
-load ([rutaCarga, 'MatricesDelArca.mat']);
+rutaGuardadoPerfilesSBR = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfilesSBR\';
 
 % Carga de las predicciones de irrigacion dadas por Tangente Penitente
-load([rutaCarga, 'control.mat']);
+load([rutaCargaArca, 'control.mat']);
 
 %%
-fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz,1));
-for i = 19 : 1 : 19
+fprintf('Total de dias: %d \n\n', length(controlIrrigacion));
+
+for i = 48 : 1 : 48
     % Perfiles de irrigacion predichos
     j = 1;
     IrrigacionDiaActual = controlIrrigacion(:, j).';
     IrrigacionDiaActual(IrrigacionDiaActual == 1 ) = 15;
     
+    load([rutaGuardadoPerfiles, 'perfil_Dia', num2str(i), '.mat']);
+    
     %% Invocar la programacion dinamica
-    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, :);
-    Irradiancia_DiaActual = Irradiancia_Matriz(i, :);
-    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, :);
+    TemperaturaAmbiente_DiaActual = temperaturaAmbiente;
+    Irradiancia_DiaActual = irradiancia;
+    VelocidadViento_DiaActual = velocidadViento;
 
     [irradiancia, temperaturaAmbiente, velocidadViento,...
     temperaturaPanel_NoIrrigation, Pgen_NoIrrigation, energiaNoBeneficio, ...
@@ -44,7 +45,7 @@ for i = 19 : 1 : 19
     numeroDia = i;
     
     %% Guardar datos
-    nombreArchivo = [rutaGuardadoPerfiles, 'perfil_Dia', num2str(i)];
+    nombreArchivo = [rutaGuardadoPerfilesSBR, 'perfil_Dia', num2str(i)];
 
     save(nombreArchivo, 'irradiancia', 'temperaturaAmbiente', 'velocidadViento', ...
     'temperaturaPanel_NoIrrigation', 'Pgen_NoIrrigation', 'energiaNoBeneficio', ...

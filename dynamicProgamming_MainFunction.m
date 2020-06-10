@@ -1,4 +1,4 @@
-function [irradiancia, temperaturaAmbiente, velocidadViento,...
+function [Irradiancia, TemperaturaAmbiente, VelocidadViento,...
     temperaturaPanel_NoIrrigation, Pgen_NoIrrigation, energiaNoBeneficio, ...
     razon_IrrigacionSBR, razon_NoIrrigation, tiempo, controlSBR, ...
     temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR] = dynamicProgamming_MainFunction(TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, d, IrrigacionSBR)
@@ -23,9 +23,9 @@ tiempo = linspace(0, tiempo10min12h(end), N); % Vector de cantidad N entre 0 y l
 % Interpolacion de los datos importados
 % Las variables al ser interpoladas tienen N datos
 
-temperaturaAmbiente = TemperaturaAmbiente_DiaActual; % Temperatura ambiente
-irradiancia = Irradiancia_DiaActual; % Irradiancia
-velocidadViento = VelocidadViento_DiaActual; % Veloicdad del viento
+TemperaturaAmbiente = TemperaturaAmbiente_DiaActual; % Temperatura ambiente
+Irradiancia = Irradiancia_DiaActual; % Irradiancia
+VelocidadViento = VelocidadViento_DiaActual; % Veloicdad del viento
 
 disp(strjoin({'Calculando perfil óptimo para el día ', num2str(d), '...'}));
 

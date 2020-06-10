@@ -1,7 +1,7 @@
 %% Procesamiento de datos necesarios en varias iteraciones
-temperaturaAmbiente_i = temperaturaAmbiente(k);
-irradiancia_i = irradiancia(k);
-velocidadViento_i = velocidadViento(k);
+temperaturaAmbiente_i = TemperaturaAmbiente(k);
+irradiancia_i = Irradiancia(k);
+velocidadViento_i = VelocidadViento(k);
 
 temperaturaAguaRiego = temperaturaAmbiente_i;                              % Temperatura del agua de riego y cava
 irradianciaPanel = areaPanel * irradiancia_i;                              % Irradiancia sobre el panel FV
