@@ -8,9 +8,7 @@ clc; clear all; close all;
 %% Cargar datos
 % Importa la matriz con los datos de todos los dias
 rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
-
-% rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
-rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles\';
+rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\chispa-culpable\perfiles\';
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
 

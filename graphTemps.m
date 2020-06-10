@@ -36,11 +36,7 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'XMinorGrid','on',...
 legend(axes1,'show');
 
 %% Guardar figura
-
-numeroDia = i;
-
-% ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Temperaturas\';
+ruta = 'C:\Users\james\Documents\GitHub\chispa-culpable\graficas\Temperaturas\';
 
 nombreArchivo = [ruta, 'graphTemperaturas_Dia', num2str(i)];
 

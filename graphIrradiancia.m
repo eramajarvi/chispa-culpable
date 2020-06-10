@@ -36,7 +36,7 @@ figure1;
 numeroDia = i;
 
 % ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Irradiancia\';
+ruta = 'C:\Users\james\Documents\GitHub\chispa-culpable\graficas\Irradiancia\';
 
 nombreArchivo = [ruta, 'graphIrradiancia_Dia', num2str(i)];
 

@@ -37,11 +37,7 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 legend(axes1,'show');
 
 %% Guardar figura
-
-numeroDia = i;
-
-% ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Energia\';
+ruta = 'C:\Users\james\Documents\GitHub\chispa-culpable\graficas\Energia\';
 
 nombreArchivo = [ruta, 'graphEnergia_Dia', num2str(i)];
 
