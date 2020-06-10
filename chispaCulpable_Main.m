@@ -14,9 +14,6 @@ rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfi
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
 
-posicion6AM = 36;
-posicion6PM = 108;
-
 % Carga de las predicciones de irrigacion dadas por Tangente Penitente
 load([rutaCarga, 'control.mat']);
 
@@ -29,9 +26,9 @@ for i = 19 : 1 : 19
     IrrigacionDiaActual(IrrigacionDiaActual == 1 ) = 15;
     
     %% Invocar la programacion dinamica
-    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, [posicion6AM:posicion6PM]);
-    Irradiancia_DiaActual = Irradiancia_Matriz(i, [posicion6AM:posicion6PM]);
-    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, [posicion6AM:posicion6PM]);
+    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, :);
+    Irradiancia_DiaActual = Irradiancia_Matriz(i, :);
+    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, :);
 
     [irradiancia, temperaturaAmbiente, velocidadViento,...
     temperaturaPanel_NoIrrigation, Pgen_NoIrrigation, energiaNoBeneficio, ...
