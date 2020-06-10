@@ -9,7 +9,7 @@ clc; clear all; close all;
 % matricesDelArca.mat
 
 rutaCargaArca = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
-rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles\';
+rutaCargaPerfiles = 'C:\Users\james\Documents\GitHub\chispa-culpable\perfiles\';
 rutaGuardadoPerfilesSBR = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfilesSBR\';
 
 % Carga de las predicciones de irrigacion dadas por Tangente Penitente
@@ -24,7 +24,7 @@ for i = 48 : 1 : 48
     IrrigacionDiaActual = controlIrrigacion(:, j).';
     IrrigacionDiaActual(IrrigacionDiaActual == 1 ) = 15;
     
-    load([rutaGuardadoPerfiles, 'perfil_Dia', num2str(i), '.mat']);
+    load([rutaCargaPerfiles, 'perfil_Dia', num2str(i), '.mat']);
     
     %% Invocar la programacion dinamica
     TemperaturaAmbiente_DiaActual = temperaturaAmbiente;
