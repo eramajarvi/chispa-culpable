@@ -18,7 +18,7 @@ load([rutaCargaArca, 'control.mat']);
 %%
 fprintf('Total de dias: %d \n\n', length(controlIrrigacion));
 
-for i = 1 : 1 : length(controlIrrigacion)
+for i = 48 : 1 : 48
     % Perfiles de irrigacion predichos
     j = 1;
     IrrigacionDiaActual = controlIrrigacion(:, j).';
