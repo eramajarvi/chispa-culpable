@@ -5,10 +5,10 @@ function [] = graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, .
 %% Datos meteorologicos del día
 % controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR
 tiempo10min12h = 0:600:43200;
-N = 73;  
+N = 72;
 
 ejeTiempo = tiempo/60/60 + 6;
-ejeTiempo_b = (linspace(0, tiempo10min12h(end), N-1))/60/60 + 6;
+ejeTiempo_b = (linspace(0, tiempo10min12h(end), N))/60/60 + 6;
 
 disp(strjoin({'Generando gráficas para el día ', num2str(i), '...'}));
 
@@ -23,7 +23,7 @@ graphTemperaturaAmbiente(ejeTiempo, temperaturaAmbiente, i)
 graphVelocidadViento(ejeTiempo, velocidadViento, i)
 
 %% Grafica de resultados de interes 
-% Potencia de irrigacion - Programacion dinamica
+% Potencia de irrigacion
 graphPotenciaIrrigacionSBR(ejeTiempo_b, controlSBR, i)
 
 % Temperatura del panel FV (incluye SBR)

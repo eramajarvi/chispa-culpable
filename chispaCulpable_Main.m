@@ -18,7 +18,7 @@ load([rutaCargaArca, 'control.mat']);
 %%
 fprintf('Total de dias: %d \n\n', length(controlIrrigacion));
 
-for i = 48 : 1 : 48
+for i = 383 : 1 : 383
     % Perfiles de irrigacion predichos
     j = 1;
     IrrigacionDiaActual = controlIrrigacion(:, j).';
@@ -38,9 +38,9 @@ for i = 48 : 1 : 48
         TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, i, IrrigacionDiaActual);
 
     %% Graficar datos
-%     graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, ...
-%         temperaturaPanel_NoIrrigation, Pgen_NoIrrigation, ...
-%         energiaNoBeneficio, i, tiempo, controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR);
+    graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, ...
+        temperaturaPanel_NoIrrigation, Pgen_NoIrrigation, ...
+        energiaNoBeneficio, i, tiempo, controlSBR, temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR);
 
     numeroDia = i;
     

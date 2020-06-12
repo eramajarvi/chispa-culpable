@@ -3,7 +3,7 @@ function [Irradiancia, TemperaturaAmbiente, VelocidadViento,...
     razon_IrrigacionSBR, razon_NoIrrigation, tiempo, controlSBR, ...
     temperaturaPanelSBR, PbenSBR, energiaBeneficioSBR, PgenSBR] = dynamicProgamming_MainFunction(TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, d, IrrigacionSBR)
 
-%PROGRAMACIÓN DINÁMICA Crea los perfiles óptimos de irrigación de un panel
+%PROGRAMACIï¿½N DINï¿½MICA Crea los perfiles ï¿½ptimos de irrigaciï¿½n de un panel
 %FV a partir de los datos de entrada
 
 %%
@@ -13,13 +13,13 @@ N = 73; % Numero de pasos 12*60 + 1 (minutos)
 
 %% Tiempos
 
-% Los perfiles meteorológicos tienen una resolución de 10 minutos durante
-% un día, sin contar el primer y último paso de cada día
+% Los perfiles meteorologicos tienen una resolucion de 10 minutos durante
+% un dï¿½a, sin contar el primer y ultimo paso de cada dia
 
-tiempo10min12h = 0:600:43200; % Vector de tiempo para un perfil de un día, con 73 pasos (43200 segundos en 12 horas)
-tiempo = linspace(0, tiempo10min12h(end), N); % Vector de cantidad N entre 0 y longitud del vector del perfil de un día espaciados uniformemente
+tiempo10min12h = 0:600:43200; % Vector de tiempo para un perfil de un dï¿½a, con 73 pasos (43200 segundos en 12 horas)
+tiempo = linspace(0, tiempo10min12h(end), N); % Vector de cantidad N entre 0 y longitud del vector del perfil de un dï¿½a espaciados uniformemente
 
-%% Días
+%% Dias
 % Interpolacion de los datos importados
 % Las variables al ser interpoladas tienen N datos
 
@@ -27,12 +27,12 @@ TemperaturaAmbiente = TemperaturaAmbiente_DiaActual; % Temperatura ambiente
 Irradiancia = Irradiancia_DiaActual; % Irradiancia
 VelocidadViento = VelocidadViento_DiaActual; % Veloicdad del viento
 
-disp(strjoin({'Calculando perfil óptimo para el día ', num2str(d), '...'}));
+disp(strjoin({'Calculando perfil optimo para el dia ', num2str(d), '...'}));
 
-%% Programación dinámica
+%% Programacion dinamica
 calcIrrigationProfile;
 
-disp(strjoin({'Perfil del día ', num2str(d), 'calculado'}));
+disp(strjoin({'Perfil del dia ', num2str(d), 'calculado'}));
 fprintf('\n');
 
 end

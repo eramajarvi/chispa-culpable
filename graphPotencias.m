@@ -35,9 +35,6 @@ set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
 legend(axes1,'show');
 
 %% Guardar figura
-
-numeroDia = i;
-
 % ruta = '/MATLAB Drive/tangente-penitente/graficas/';
 ruta = 'C:\Users\james\Documents\GitHub\tangente-penitente\graficas\Potencias\';
 

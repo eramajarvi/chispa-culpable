@@ -1,7 +1,7 @@
-%% Sistema de irrigación SBR activo
-temperaturaPanelSBR(1) = 23;                                                  % Temperatura inicial del panel FV con sistema de irrigación SBR activo
+%% Sistema de irrigaciï¿½n SBR activo
+temperaturaPanelSBR(1) = 23;                                                  % Temperatura inicial del panel FV con sistema de irrigaciï¿½n SBR activo
 
-% Cálculo de temperatura
+% Cï¿½lculo de temperatura
 for k = 1 : 1 : N - 1
     iterativeData;
     
@@ -26,7 +26,7 @@ for k = 1 : 1 : N - 1
         * coeficienteConveccionNoIrrigacion .* (temperaturaPanelSBR(k)...
         - temperaturaAmbiente_i)))/(areaPanel *capacidadTermica_k);
     
-    irriga = IrrigacionSBR(k);
+    irriga = Irrigacion;
     
     temperaturaPanelSBR(k + 1) = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigationSBR, irriga, variacionTemperaturaPanel_IrrigationSBR, deltaT, temperaturaPanelSBR(k));
     controlSBR(k) = irriga;
@@ -37,10 +37,10 @@ end
 
 controlSBR = (controlSBR > 0) * 15;
 
-%% Sistema de irrigación inactivo
-temperaturaPanel_NoIrrigation(1) = 23;                                     % Temperatura inicial del panel FV con sistema de irrigación inactivo
+%% Sistema de irrigacion inactivo
+temperaturaPanel_NoIrrigation(1) = 23;                                     % Temperatura inicial del panel FV con sistema de irrigaciï¿½n inactivo
 
-% Cálculo de temperatura
+% Cï¿½lculo de temperatura
 for k = 1: 1: N - 1
     
     iterativeData;
