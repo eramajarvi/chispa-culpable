@@ -84,3 +84,6 @@ for k = 2:1:N-1
     
 end
 
+% Corrigiendo un problema de escala
+energiaBeneficioSBR = energiaBeneficioSBR  * 10;
+energiaNoBeneficio = energiaNoBeneficio * 10;

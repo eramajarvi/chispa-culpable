@@ -1,5 +1,5 @@
-%% FUNCI�N PRINCIPAL PROGRAMACI�N DIN�MICA
-% Modificada para llamar a una funci�n de forma iterativa y guardar los
+%% FUNCION PRINCIPAL PROGRAMACION DINAMICA
+% Modificada para llamar a una funcion de forma iterativa y guardar los
 % perfiles generados
 tic
 clc; clear all; close all;
@@ -18,7 +18,7 @@ load([rutaCargaArca, 'control.mat']);
 %%
 fprintf('Total de dias: %d \n\n', length(controlIrrigacion));
 
-for i = 383 : 1 : 383
+for i = 502 : 1 : 502
     % Perfiles de irrigacion predichos
     j = 1;
     IrrigacionDiaActual = controlIrrigacion(:, j).';
