@@ -81,3 +81,6 @@ for k = 2:1:N-1
     energiaNoBeneficio(k) = energiaNoBeneficio(k-1) + Pgen_NoIrrigation(k - 1) * deltaT/3600/1000;
     
 end
+
+energiaBeneficio = energiaBeneficio * 10;
+energiaNoBeneficio = energiaNoBeneficio * 10;
