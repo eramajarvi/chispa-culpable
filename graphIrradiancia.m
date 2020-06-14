@@ -1,4 +1,4 @@
-function graphIrradiancia(X1, Y1, i)
+function graphIrradiancia(X1, Y1Matrix, i)
 %CREATEFIGURE(X1, Y1)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -13,7 +13,7 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 % Create plot
-plot(X1,Y1,'LineWidth',1,'Color',[1 0.074509803921569 0.650980392156863]);
+plot(X1,Y1Matrix,'LineWidth',1,'Color',[1 0.074509803921569 0.650980392156863]);
 
 % Create ylabel
 ylabel('Irradiancia [W/m^2]');
@@ -22,7 +22,7 @@ ylabel('Irradiancia [W/m^2]');
 xlabel('tiempo [horas]');
 
 % Create title
-title('Irradiancia');
+title('Irradiancia, Temp. Ambiente, Vel. Viento');
 
 box(axes1,'on');
 grid(axes1,'on');
@@ -30,16 +30,12 @@ grid(axes1,'on');
 set(axes1,'FontName','Cambria Math','GridColor',[0 0 0],'GridLineStyle',...
     '--','XMinorGrid','on','YMinorGrid','on');
 
-%% Guardar figura
-figure1;
-
-numeroDia = i;
-
-% ruta = '/MATLAB Drive/tangente-penitente/graficas/';
-ruta = 'C:\Users\james\Documents\GitHub\chispa-culpable\graficas\Irradiancia\';
-
-nombreArchivo = [ruta, 'graphIrradiancia_Dia', num2str(i)];
-
-saveas(figure1, nombreArchivo, 'fig');
-saveas(figure1, nombreArchivo, 'png');
-close;
+% %% Guardar figura
+% figure1;
+% ruta = 'C:\Users\james\Documents\GitHub\chispa-culpable\graficas\Irradiancia\';
+% 
+% nombreArchivo = [ruta, 'graphIrradiancia_Dia', num2str(i)];
+% 
+% saveas(figure1, nombreArchivo, 'fig');
+% saveas(figure1, nombreArchivo, 'png');
+% close;

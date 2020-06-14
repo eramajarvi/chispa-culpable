@@ -1,55 +1,26 @@
 %% FUNCION PRINCIPAL PROGRAMACION DINAMICA
-% En esta rama del repositorio se crean los perfiles optimos con
-% programacion dinamica
-% Modificada para llamar a una funcion de forma iterativa y guardar los
-% perfiles generados.
 
 tic
 clc; clear all; close all;
 
 %% Cargar datos
 % Importa la matriz con los datos de todos los dias
-rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
-rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\chispa-culpable\perfiles\';
+rutaCargaPD = 'C:\Users\James\Desktop\perfiles PD\';
+rutaCargaTP = 'C:\Users\James\Documents\Github\tangente-penitente\perfilesSBR\Prueba 5\';
 
-load ([rutaCarga, 'MatricesDelArca.mat']);
+for i = 286 : 1 : 286
 
-fprintf('Total de dias: %d \n\n', size(Irradiancia_Matriz, 1));
-%i = 1 : 1 : size(Irradiancia_Matriz, 1) 
-
-for i = 253 : 1 : 253
-    %% Invocar la programacion dinamica
-    TemperaturaAmbiente_DiaActual = TemperaturaAmbiente_Matriz(i, :);
-    Irradiancia_DiaActual = Irradiancia_Matriz(i, :);
-    VelocidadViento_DiaActual = VelocidadViento_Matriz(i, :);
+    load([rutaCargaPD, 'perfil_Dia', num2str(i)]);
+    load([rutaCargaTP, 'perfil_Dia', num2str(i)]);
     
-    load([rutaGuardadoPerfiles, 'perfil_Dia', num2str(i)]);
+    t = tiempo/60/60 + 6;
+    N = 73;
+    tiempo10min12h = 0:600:43200;
+    ejeTiempo_b = (linspace(0, tiempo10min12h(end), N-1))/60/60 + 6;
     
-    energiaBeneficio = energiaBeneficio * 10;
-    energiaNoBeneficio = energiaNoBeneficio * 10;
-
-%     [irradiancia, temperaturaAmbiente, velocidadViento,...
-%         control, temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, ...
-%         Pgen_NoIrrigation, energiaBeneficio, energiaNoBeneficio, razon_Irrigacion, ...
-%         razon_NoIrrigation, tiempo, Pgen] = dynamicProgamming_MainFunction(...
-%         TemperaturaAmbiente_DiaActual, Irradiancia_DiaActual, VelocidadViento_DiaActual, i);
-
     %% Graficar datos
-    graphProfiles(irradiancia, temperaturaAmbiente, velocidadViento, control, ...
-        temperaturaPanel, temperaturaPanel_NoIrrigation, Pben, Pgen_NoIrrigation, ...
-        energiaBeneficio, energiaNoBeneficio, i, tiempo);
-    
-    %% Guardar datos  
-    nombreArchivo = [rutaGuardadoPerfiles, 'perfil_Dia', num2str(i)];
-
-    save(nombreArchivo, 'irradiancia', 'temperaturaAmbiente', 'velocidadViento',...
-        'control', 'temperaturaPanel', 'temperaturaPanel_NoIrrigation'...
-        , 'Pben', 'Pgen_NoIrrigation', 'energiaBeneficio', 'energiaNoBeneficio'...
-        , 'razon_Irrigacion', 'razon_NoIrrigation', 'tiempo');
-    
-    clear irradiancia temperaturaAmbiente velocidadViento control ...
-        ejeTiempo ejeTiempo_b temperaturaPanel temperaturaPanel_NoIrrigation ...
-        Pben Pgen_NoIrrigation energiaBeneficio energiaNoBeneficio razon_Irrigacion ...
-        razon_NoIrrigation tiempo;
+    graphVariablesBasicas(t, temperaturaAmbiente, t, irradiancia, velocidadViento)
+    graphEnergia(ejeTiempo_b, [energiaBeneficioSBR; energiaBeneficio; energiaNoBeneficio]);
+    graphPotencias(ejeTiempo_b, [Pgen_NoIrrigation; PbenSBR; Pben]);
 end
 toc
