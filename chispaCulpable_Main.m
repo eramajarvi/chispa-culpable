@@ -4,7 +4,7 @@
 tic
 clc; clear all; close all;
 
-%% Cargar datos
+%% Cargar datos 
 % Importa la matriz con los datos de todos los dias, llamada
 % matricesDelArca.mat
 

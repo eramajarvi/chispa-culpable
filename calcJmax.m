@@ -1,12 +1,12 @@
-%% Proceso de cálculo
+%% Proceso de calculo
 
 vTemperaturaPanel = 20:0.1:80;                                             % Vector de temperatura del panel FV                                       
-vPotenciaIrrigacion = [0 15];                                              % Vector de la potencia de irrigación
+vPotenciaIrrigacion = [0 15];                                              % Vector de la potencia de irrigaciï¿½n
 
-Jmax = zeros(length(vTemperaturaPanel), N);                                % Matriz de costo óptimo                            
-Uopt = zeros(length(vTemperaturaPanel), N-1);                              % Matriz de control óptimo
+Jmax = zeros(length(vTemperaturaPanel), N);                                % Matriz de costo ï¿½ptimo                            
+Uopt = zeros(length(vTemperaturaPanel), N-1);                              % Matriz de control ï¿½ptimo
 
-Jmax(:, N) = 0 * vTemperaturaPanel;                                        % Valor final de la matriz de costo óptimo                 
+Jmax(:, N) = 0 * vTemperaturaPanel;                                        % Valor final de la matriz de costo ï¿½ptimo                 
 
 for k = N-1 : -1 : 1
     for i = 1:length(vTemperaturaPanel)
@@ -16,14 +16,14 @@ for k = N-1 : -1 : 1
 
         potenciaGenerada = areaPanel * eficienciaPanel * irradiancia_i .* (1 + b * (temperaturaPanel - 25));
         
-        irrigation;                                                        % Cálculos de temperatura, potencia generada cuando el panel está irrigado
-        noIrrigation;                                                      % Cálculos de temperatura, potencia generada cuando el panel no está irrigado
+        irrigation;                                                        % Cï¿½lculos de temperatura, potencia generada cuando el panel estï¿½ irrigado
+        noIrrigation;                                                      % Cï¿½lculos de temperatura, potencia generada cuando el panel no estï¿½ irrigado
         
        %% Llamado a funciones
-        hk = h(potenciaGenerada_Irrigation, potenciaGenerada_NoIrrigation, potenciaGenerada, vPotenciaIrrigacion); % Funcion objetivo Potencia beneficio = potencia generada - potencia irrigación
+        hk = h(potenciaGenerada_Irrigation, potenciaGenerada_NoIrrigation, potenciaGenerada, vPotenciaIrrigacion); % Funcion objetivo Potencia beneficio = potencia generada - potencia irrigaciï¿½n
         xk = Fk(temperaturaAmbiente_i, variacionTemperaturaPanel_NoIrrigation, vPotenciaIrrigacion, variacionTemperaturaPanel_Irrigation, deltaT, temperaturaPanel);
         
-        Jk1u = interp1(vTemperaturaPanel, Jmax(:, k + 1), xk);             % Costo óptimo del siguiente estado
+        Jk1u = interp1(vTemperaturaPanel, Jmax(:, k + 1), xk);             % Costo ï¿½ptimo del siguiente estado
         
         [maximo, pos] = max(hk + Jk1u);
         Jmax(i,k) = maximo;                                                % Jmax en cada punto
