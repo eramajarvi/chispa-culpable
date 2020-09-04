@@ -8,7 +8,7 @@ clc; clear all; close all;
 rutaCargaPD = 'C:\Users\James\Desktop\perfiles PD\';
 rutaCargaTP = 'C:\Users\James\Documents\Github\tangente-penitente\perfilesSBR\Prueba 5\';
 
-for i = 286 : 1 : 286
+for i = 93 : 1 : 93
 
     load([rutaCargaPD, 'perfil_Dia', num2str(i)]);
     load([rutaCargaTP, 'perfil_Dia', num2str(i)]);

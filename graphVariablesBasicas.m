@@ -20,15 +20,15 @@ plot(X1,Y1,'Parent',subplot1,'LineWidth',0.7,...
     'Color',[0.149019607843137 0.149019607843137 0.149019607843137]);
 
 % Create ylabel
-ylabel('Temperatura ambiente [ºC]','FontName','Cambria Math');
+ylabel('T. ambiente [ºC]','FontName','Humanst521 BT');
 
 % Create xlabel
-xlabel('Hora','FontName','Cambria Math');
+xlabel('Hora','FontName','Humanist');
 
 box(subplot1,'on');
 hold(subplot1,'off');
 % Set the remaining axes properties
-set(subplot1,'FontName','Cambria Math','XGrid','on','YGrid','on');
+set(subplot1,'FontName','Humanst521 BT','XGrid','on','YGrid','on');
 % Create subplot
 subplot2 = subplot(3,1,2,'Parent',figure1);
 hold(subplot2,'on');
@@ -45,7 +45,7 @@ xlabel('Hora');
 box(subplot2,'on');
 hold(subplot2,'off');
 % Set the remaining axes properties
-set(subplot2,'FontName','Cambria Math','XGrid','on','YGrid','on');
+set(subplot2,'FontName','Humanst521 BT','XGrid','on','YGrid','on');
 % Create subplot
 subplot3 = subplot(3,1,3,'Parent',figure1);
 hold(subplot3,'on');
@@ -54,7 +54,7 @@ hold(subplot3,'on');
 plot(X2,Y3,'Parent',subplot3,'Color',[0 0 0]);
 
 % Create ylabel
-ylabel('Velocidad del viento [m/s]');
+ylabel('V. viento [m/s]');
 
 % Create xlabel
 xlabel('Hora');
@@ -62,4 +62,4 @@ xlabel('Hora');
 box(subplot3,'on');
 hold(subplot3,'off');
 % Set the remaining axes properties
-set(subplot3,'FontName','Cambria Math','XGrid','on','YGrid','on');
+set(subplot3,'FontName','Humanst521 BT','XGrid','on','YGrid','on');

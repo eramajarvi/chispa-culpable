@@ -21,15 +21,15 @@ set(plot1(3),'DisplayName','Energía sin irrigación','LineStyle','--',...
     'Color',[0 0 0]);
 
 % Create ylabel
-ylabel('Energía [kWh]','FontName','Cambria Math');
+ylabel('Energía [kWh]','FontName','Humanst521 BT');
 
 % Create xlabel
-xlabel('Hora','FontName','Cambria Math');
+xlabel('Hora','FontName','Humanst521 BT');
 
 box(axes1,'on');
 hold(axes1,'off');
 % Set the remaining axes properties
-set(axes1,'FontName','Cambria Math','XGrid','on','XMinorGrid','on','YGrid',...
+set(axes1,'FontName','Humanst521 BT','XGrid','on','XMinorGrid','on','YGrid',...
     'on','YMinorGrid','on');
 % Create legend
 legend1 = legend(axes1,'show');
