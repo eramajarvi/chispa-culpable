@@ -1,4 +1,4 @@
-function graphPotencias(t, YMatrix1)
+function graphPotencias(t, YMatrix1, i)
 % Para referencia:
 % YMatrix1 = [Pgen_NoIrrigation; PbenSBR; Pben]
 
@@ -35,3 +35,12 @@ set(axes1,'FontName','Humanst521 BT','XGrid','on','XMinorGrid','on','YGrid',...
 % Create legend
 legend(axes1,'show');
 
+% -------------------------------------------------------------------------
+% Guardar graficas
+% Descomentar la siguiente linea para guardar la grafica en una ruta
+% especifica. De lo contrario se guarda en la ruta actual
+ruta = 'C:\Users\james\Desktop\graficasTEMP\';
+
+nombreArchivo = [ruta, 'dia', num2str(i), '-potencia'];
+saveas(figure1, nombreArchivo, 'svg');
+close;

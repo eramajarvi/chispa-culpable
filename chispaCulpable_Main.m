@@ -28,9 +28,9 @@ for i = 286 : 1 : 286
 % Llamada a las funciones que generan las graficas
 
     graphVariablesBasicas(t, temperaturaAmbiente, irradiancia, velocidadViento)
-    graphEnergia(ejeTiempo_b, [energiaBeneficioSBR; energiaBeneficio; energiaNoBeneficio]);
+    graphEnergia(ejeTiempo_b, [energiaBeneficioSBR; energiaBeneficio; energiaNoBeneficio], i);
     graphPotencias(ejeTiempo_b, [Pgen_NoIrrigation; PbenSBR; Pben]);
-    graphPotenciaIrrigacion(ejeTiempo_b, controlSBR, ejeTiempo_b, control)
+    graphPotenciaIrrigacion(ejeTiempo_b, controlSBR, ejeTiempo_b, control, i)
     
 end
 toc

@@ -1,4 +1,4 @@
-function graphEnergia(t, YMatrix1)
+function graphEnergia(t, YMatrix1, i)
 % Para referencia:
 % YMatrix1 = [energiaBeneficioSBR; energiaBeneficio; energiaNoBeneficio]
 
@@ -35,3 +35,12 @@ legend1 = legend(axes1,'show');
 set(legend1,...
     'Position',[0.168521858453747 0.788659742172535 0.296464182497259 0.117508810009155]);
 
+% -------------------------------------------------------------------------
+% Guardar graficas
+% Descomentar la siguiente linea para guardar la grafica en una ruta
+% especifica. De lo contrario se guarda en la ruta actual
+ruta = 'C:\Users\james\Desktop\graficasTEMP\';
+
+nombreArchivo = [ruta, 'dia', num2str(i), '-energia'];
+saveas(figure1, nombreArchivo, 'svg');
+close;
