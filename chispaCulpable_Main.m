@@ -22,5 +22,6 @@ for i = 93 : 1 : 93
     graphVariablesBasicas(t, temperaturaAmbiente, t, irradiancia, velocidadViento)
     graphEnergia(ejeTiempo_b, [energiaBeneficioSBR; energiaBeneficio; energiaNoBeneficio]);
     graphPotencias(ejeTiempo_b, [Pgen_NoIrrigation; PbenSBR; Pben]);
+    graphPotenciaIrrigacion(ejeTiempo_b, controlSBR)
 end
 toc
