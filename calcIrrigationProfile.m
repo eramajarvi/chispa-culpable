@@ -1,7 +1,7 @@
-%% Sistema de irrigaci�n activo
-temperaturaPanel(1) = 23;                                                  % Temperatura inicial del panel FV con sistema de irrigaci�n activo
+%% Sistema de irrigacion activo
+temperaturaPanel(1) = 23; % Temperatura inicial del panel FV con sistema de irrigacion activo
 
-% C�lculo de temperatura
+% Calculo de temperatura
 for k = 1 : 1 : N - 1
     iterativeData;
     

@@ -1,6 +1,7 @@
 %% FUNCIÓN PRINCIPAL PROGRAMACIÓN DINÁMICA
 % Modificada para llamar a una función de forma iterativa y guardar los
 % perfiles generados
+
 tic
 clc; clear all; close all;
 
@@ -9,7 +10,6 @@ clc; clear all; close all;
 % rutaCarga = '/MATLAB Drive/tangente-penitente';
 rutaCarga = 'C:\Users\james\Documents\GitHub\tangente-penitente\';
 
-% rutaGuardadoPerfiles = '/MATLAB Drive/tangente-penitente/perfiles';
 rutaGuardadoPerfiles = 'C:\Users\james\Documents\GitHub\tangente-penitente\perfiles\';
 
 load ([rutaCarga, 'MatricesDelArca.mat']);
